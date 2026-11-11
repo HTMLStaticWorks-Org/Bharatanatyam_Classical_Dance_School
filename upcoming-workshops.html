@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs by Level | Nrityanjali Academy of Classical Dance</title>
+  <meta name="description" content="Structured Bharatanatyam curriculum by level: Prarambhik (Beginner), Madhyama (Intermediate), Visharad (Advanced), and Arangetram Solo Debut Preparation.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M16 5V27M5 16H27M8.2 8.2L23.8 23.8M23.8 8.2L8.2 23.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="2.6" fill="currentColor"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">NRITYANJALI</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index2.html" class="nav-link">Home 2</a></li>
+          <li><a href="upcoming-workshops.html" class="nav-link active">Programs</a></li>
+          <li><a href="about.html" class="nav-link">Gurus</a></li>
+          <li><a href="events.html" class="nav-link">Performances</a></li>
+          <li><a href="pricing.html" class="nav-link">Batches & Fees</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+          <span>◐</span>
+        </button>
+        <button class="ctrl-btn js-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction">
+          <span>⇄</span>
+        </button>
+        <a href="dashboard.html" class="ctrl-btn" aria-label="Student Dashboard" title="Student Dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+        </a>
+        <a href="login.html" class="nav-primary-cta" title="Student Login Portal">
+          <span>Student Portal</span>
+        </a>
+      </div>
+
+      <button class="mobile-hamburger" aria-label="Open Mobile Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <div class="brand-text"><span class="brand-name">NRITYANJALI</span></div>
+      <button class="drawer-close-btn">✕</button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="index.html" class="mobile-drawer-link">Home</a></li>
+      <li><a href="index2.html" class="mobile-drawer-link">Home 2</a></li>
+      <li><a href="upcoming-workshops.html" class="mobile-drawer-link active">Programs</a></li>
+      <li><a href="about.html" class="mobile-drawer-link">Gurus</a></li>
+      <li><a href="events.html" class="mobile-drawer-link">Performances</a></li>
+      <li><a href="pricing.html" class="mobile-drawer-link">Batches & Fees</a></li>
+      <li><a href="contact.html" class="mobile-drawer-link">Contact</a></li>
+    </ul>
+    <div class="drawer-controls">
+      <a href="login.html" class="nav-primary-cta" style="width: 100%; text-align: center;">
+        <span>Student Portal</span>
+      </a>
+      <div class="ctrl-group">
+        <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme"><span>◐</span></button>
+        <button class="ctrl-btn js-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction"><span>⇄</span></button>
+        <a href="dashboard.html" class="ctrl-btn" aria-label="Student Dashboard" title="Student Dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 01 — HERO -->
+    <section class="inner-hero hero-programs">
+      <div class="container">
+        <span class="section-tag">STRUCTURED CURRICULUM</span>
+        <h1>CLASSICAL DANCE PROGRAMS BY LEVEL</h1>
+        <p>
+          From foundational Adavu footwork and Aramandi posture to full Margam repertoire and professional Arangetram solo debuts.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 02 — LEVEL FILTER -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">ALL PROGRAMS</button>
+          <button class="filter-btn" data-filter="beginner">LEVEL 1: PRARAMBHIK</button>
+          <button class="filter-btn" data-filter="intermediate">LEVEL 2: MADHYAMA</button>
+          <button class="filter-btn" data-filter="advanced">LEVEL 3: VISHARAD</button>
+          <button class="filter-btn" data-filter="arangetram">LEVEL 4: ARANGETRAM DEBUT</button>
+          <button class="filter-btn" data-filter="special">SPECIAL MASTERCLASSES</button>
+        </div>
+
+        <!-- SECTION 03 — PROGRAMS LISTING GRID -->
+        <div class="workshops-grid">
+          
+          <!-- Item 1: Prarambhik -->
+          <div class="workshop-card hover-petal-card" data-category="beginner">
+            <div class="workshop-card-img image-leaf-container">
+              <img src="assets/images/program-beginner.jpg" alt="Bharatanatyam beginners learning Adavus in wooden studio">
+            </div>
+            <div class="workshop-card-body">
+              <div class="workshop-card-meta">
+                <span>MON & WED • 4:00 PM</span>
+                <span>4 SLOTS OPEN</span>
+              </div>
+              <h3>Level 1: Prarambhik (Adavu Foundation)</h3>
+              <p>Master the 64 classical adavus, geometric Aramandi posture, Asamyuta hand gestures, and Adi talam recitation.</p>
+              <ul class="workshop-activities-list">
+                <li><strong>Activity:</strong> Tatta, Natta, Kuditta Mettu series & Aramandi stamina</li>
+                <li><strong>Outcome:</strong> Flawless alignment, rhythm sense & footwork clarity</li>
+                <li><strong>Includes:</strong> Practice notebook, audio solkattu drills, term exam</li>
+              </ul>
+              <div class="workshop-card-footer">
+                <div>
+                  <span class="workshop-price">$120</span>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Per month • Age 6+ or beginners</div>
+                </div>
+                <a href="dashboard.html#batches" class="btn btn-primary">ENROLL IN BATCH →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Madhyama -->
+          <div class="workshop-card hover-petal-card" data-category="intermediate">
+            <div class="workshop-card-img image-leaf-container">
+              <img src="assets/images/program-intermediate.jpg" alt="Bharatanatyam intermediate dancers practicing Jatiswaram footwork">
+            </div>
+            <div class="workshop-card-body">
+              <div class="workshop-card-meta">
+                <span>TUE & THU • 5:30 PM</span>
+                <span>3 SLOTS OPEN</span>
+              </div>
+              <h3>Level 2: Madhyama (Jatiswaram & Shabdam)</h3>
+              <p>Advance into rhythmic korvais, Samyuta mudras, melodic swara patterns, and early devotional Shabdam storytelling.</p>
+              <ul class="workshop-activities-list">
+                <li><strong>Activity:</strong> Complex teermanams in 3 speeds & basic Sancharis</li>
+                <li><strong>Outcome:</strong> Mastery of Alarippu, Jatiswaram, and Sarasijakshulu Shabdam</li>
+                <li><strong>Includes:</strong> Ragam & Talam theory guide, live percussion lab</li>
+              </ul>
+              <div class="workshop-card-footer">
+                <div>
+                  <span class="workshop-price">$180</span>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Per month • Prerequisite: 2+ yrs exp</div>
+                </div>
+                <a href="dashboard.html#batches" class="btn btn-primary">ENROLL IN BATCH →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Visharad -->
+          <div class="workshop-card hover-petal-card" data-category="advanced">
+            <div class="workshop-card-img image-leaf-container">
+              <img src="assets/images/program-advanced.jpg" alt="Advanced classical dancer performing Varnam in stage lighting">
+            </div>
+            <div class="workshop-card-body">
+              <div class="workshop-card-meta">
+                <span>WED & FRI • 6:00 PM</span>
+                <span>2 SLOTS OPEN</span>
+              </div>
+              <h3>Level 3: Visharad (The Grand Varnam & Margam)</h3>
+              <p>Conquer the centerpiece of Bharatanatyam: 45-minute Shanmukhapriya Varnam with intense teermanams and Navarasa abhinaya.</p>
+              <ul class="workshop-activities-list">
+                <li><strong>Activity:</strong> Unbroken 45-min Varnam execution & Padam improvisation</li>
+                <li><strong>Outcome:</strong> Expressive maturity in Shringara, Vatsalya & Bhakti</li>
+                <li><strong>Includes:</strong> 1-on-1 Guru review & orchestra alignment</li>
+              </ul>
+              <div class="workshop-card-footer">
+                <div>
+                  <span class="workshop-price">$240</span>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Per month • Audition required</div>
+                </div>
+                <a href="dashboard.html#batches" class="btn btn-primary">ENROLL IN BATCH →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Arangetram Debut -->
+          <div class="workshop-card hover-petal-card" data-category="arangetram">
+            <div class="workshop-card-img image-leaf-container">
+              <img src="assets/images/program-arangetram.jpg" alt="Solo Arangetram graduation performance in auditorium">
+            </div>
+            <div class="workshop-card-body">
+              <div class="workshop-card-meta">
+                <span>SATURDAYS + 1-ON-1</span>
+                <span>ANNUAL COHORT</span>
+              </div>
+              <h3>Level 4: Arangetram Intensive (Solo Debut)</h3>
+              <p>12-month intensive soloist residency culminating in a 2.5-hour graduation recital with full live 5-piece Carnatic orchestra.</p>
+              <ul class="workshop-activities-list">
+                <li><strong>Activity:</strong> Complete 8-piece Margam suite with live ensemble</li>
+                <li><strong>Outcome:</strong> Salangai Pooja consecration & professional soloist status</li>
+                <li><strong>Includes:</strong> Auditorium booking, orchestra, brochure, video</li>
+              </ul>
+              <div class="workshop-card-footer">
+                <div>
+                  <span class="workshop-price">Mentorship</span>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Full-year residency • Track in dashboard</div>
+                </div>
+                <a href="dashboard.html#arangetram" class="btn btn-primary">TRACK ON DASHBOARD →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Tala & Nattuvangam Masterclass -->
+          <div class="workshop-card hover-petal-card" data-category="special">
+            <div class="workshop-card-img image-leaf-container">
+              <img src="assets/images/guru-maestro.jpg" alt="Guru playing bronze nattuvangam cymbals">
+            </div>
+            <div class="workshop-card-body">
+              <div class="workshop-card-meta">
+                <span>THURSDAYS • 6:00 PM</span>
+                <span>5 SLOTS OPEN</span>
+              </div>
+              <h3>Tala & Nattuvangam Masterclass</h3>
+              <p>Master the bronze cymbals (Taalam), solkattu metric recitation, and rhythmic conducting under Guru Sri V. Sundaresan.</p>
+              <ul class="workshop-activities-list">
+                <li><strong>Activity:</strong> Tisra, Chaturasra, Khanda, Misra, Sankeerna tala drills</li>
+                <li><strong>Outcome:</strong> Impeccable internal metronome and nattuvangam skills</li>
+                <li><strong>Includes:</strong> Brass practice cymbals, notation booklet</li>
+              </ul>
+              <div class="workshop-card-footer">
+                <div>
+                  <span class="workshop-price">$150</span>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Per month • Open to dancers & teachers</div>
+                </div>
+                <a href="dashboard.html#batches" class="btn btn-primary">ENROLL IN BATCH →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Abhinaya Sanskrit Aesthetics -->
+          <div class="workshop-card hover-petal-card" data-category="special">
+            <div class="workshop-card-img image-leaf-container">
+              <img src="assets/images/guru-teacher.jpg" alt="Guru explaining Abhinaya Darpana facial expressions">
+            </div>
+            <div class="workshop-card-body">
+              <div class="workshop-card-meta">
+                <span>SUNDAYS • 10:00 AM</span>
+                <span>6 SLOTS OPEN</span>
+              </div>
+              <h3>Abhinaya & Sanskrit Aesthetics Masterclass</h3>
+              <p>Immerse in the poetry of Jayadeva's Gita Govinda, Kshetrayya padas, and the nine classical Rasas with Vidushi Meenakshi Iyer.</p>
+              <ul class="workshop-activities-list">
+                <li><strong>Activity:</strong> Micro-facial muscle isolation, Drishti bhedas & Sancharis</li>
+                <li><strong>Outcome:</strong> Profound dramatic and emotional expressiveness</li>
+                <li><strong>Includes:</strong> Word-by-word Sanskrit translations, audio padas</li>
+              </ul>
+              <div class="workshop-card-footer">
+                <div>
+                  <span class="workshop-price">$160</span>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Per month • Intermediate to Advanced</div>
+                </div>
+                <a href="dashboard.html#batches" class="btn btn-primary">ENROLL IN BATCH →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04 — FEATURED PROGRAM DETAIL -->
+    <section class="section-padding" style="background-color: var(--bg-surface-elevated);">
+      <div class="container">
+        <div class="section-header center-align">
+          <span class="section-tag">PROGRAM SPOTLIGHT</span>
+          <h2>THE ARANGETRAM SOLOIST GRADUATION TRACK</h2>
+        </div>
+
+        <div class="experience-grid">
+          <div class="image-leaf-container hover-petal-card">
+            <img src="assets/images/hero-performance.jpg" alt="Solo dancer performing on stage during Arangetram recital">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-main);">
+              The Arangetram (literally "ascending the stage") is the pinnacle moment of a classical dancer's discipleship. At Nrityanjali, we provide an all-inclusive 12-month mentorship framework that prepares the disciple physically, mentally, and musically for this monumental sacred debut.
+            </p>
+
+            <div style="background: var(--bg-surface); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="margin-bottom: 12px; color: var(--terracotta-bloom);">THE 8-PIECE MARGAM REPERTOIRE:</h4>
+              <ul class="event-list" style="color: var(--text-main);">
+                <li><strong>01. Pushpanjali & Alarippu:</strong> Invocation with flowers & rhythmic neck/eye balance</li>
+                <li><strong>02. Jatiswaram:</strong> Pure Nritta set to melodic swara combinations</li>
+                <li><strong>03. Shabdam:</strong> Devotional stutis with early narrative mime</li>
+                <li><strong>04. Varnam:</strong> The 45-minute masterpiece combining Nritta and Abhinaya</li>
+                <li><strong>05. Padams & Javalis:</strong> Deep emotional poetry and Sanchari improvisation</li>
+                <li><strong>06. Dhanashree Tillana:</strong> Fast rhythmic crescendo of joy and sculpturesque poses</li>
+                <li><strong>07. Mangalam:</strong> Sacred salutations to Lord Nataraja, Guru, and audience</li>
+              </ul>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="dashboard.html#arangetram" class="btn btn-primary">TRACK ARANGETRAM ON DASHBOARD →</a>
+              <a href="contact.html" class="btn btn-secondary">SCHEDULE AN AUDITION</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-md);">
+            <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M16 5V27M5 16H27M8.2 8.2L23.8 23.8M23.8 8.2L8.2 23.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="2.6" fill="currentColor"/>
+            </svg>
+            <div class="brand-text">
+              <span class="brand-name">NRITYANJALI</span>
+            </div>
+          </a>
+          <p style="color: var(--text-inverse-muted); font-size: 0.9rem; margin-bottom: 14px;">
+            A premier academy of Bharatanatyam and Indian classical performing arts dedicated to preserving heritage through authentic Guru-Shishya Parampara.
+          </p>
+          <div class="social-links-grid">
+            <a href="#" class="social-icon-btn" aria-label="Instagram" title="Instagram" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube" title="YouTube" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0-.46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook" title="Facebook" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>EXPLORE</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="upcoming-workshops.html">Programs by Level</a></li>
+            <li><a href="about.html">Our Gurus & Heritage</a></li>
+            <li><a href="events.html">Performances & Festivals</a></li>
+            <li><a href="pricing.html">Batches & Tuition</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>ACADEMY</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">Guru-Shishya Tradition</a></li>
+            <li><a href="contact.html">Admissions & Auditions</a></li>
+            <li><a href="login.html">Student Login Portal</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>STUDENT SERVICES</h5>
+          <ul class="footer-links">
+            <li><a href="dashboard.html#schedules">Weekly Class Schedules</a></li>
+            <li><a href="dashboard.html#batches">Batch Enrollments</a></li>
+            <li><a href="dashboard.html#arangetram">Arangetram Tracker</a></li>
+            <li><a href="contact.html">Studio Rental</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>NRITYA TARANG</h5>
+          <p style="color: var(--text-inverse-muted); font-size: 0.85rem; margin-bottom: 12px;">
+            Subscribe to receive classical dance festival dates, performance invites & repertoire articles.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to Nritya Tarang Bulletin!');">
+            <div class="newsletter-input-group">
+              <input type="email" class="form-control" placeholder="Email Address" required style="background: rgba(247,241,231,0.1); color: var(--petal-cream); border-color: rgba(247,241,231,0.2);">
+              <button type="submit" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.8rem;">JOIN</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Nrityanjali Academy of Classical Dance. All rights reserved.</span>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: var(--text-inverse-muted);">Privacy Policy</a>
+          <a href="#" style="color: var(--text-inverse-muted);">Terms of Academy</a>
+          <a href="#" style="color: var(--text-inverse-muted);">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

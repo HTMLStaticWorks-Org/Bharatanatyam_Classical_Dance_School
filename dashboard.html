@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal | Nrityanjali Academy of Classical Dance</title>
+  <meta name="description" content="Student dashboard for enrolling in Bharatanatyam batches, viewing weekly class & rehearsal schedules, and tracking Arangetram graduation preparation.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- DASHBOARD SIDEBAR (DESKTOP & MOBILE OFF-CANVAS) -->
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="brand-logo" style="color: var(--petal-cream);">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M16 5V27M5 16H27M8.2 8.2L23.8 23.8M23.8 8.2L8.2 23.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="2.6" fill="currentColor"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">NRITYANJALI</span>
+        </div>
+      </a>
+      <button id="dash-sidebar-close" class="sidebar-close-btn" aria-label="Close Navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a href="#overview" class="sidebar-menu-link js-dash-tab active" data-tab="overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Overview</span>
+        </a>
+      </li>
+      <li>
+        <a href="#batches" class="sidebar-menu-link js-dash-tab" data-tab="batches">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Enrolling in Batches</span>
+        </a>
+      </li>
+      <li>
+        <a href="#schedules" class="sidebar-menu-link js-dash-tab" data-tab="schedules">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Viewing Schedules</span>
+        </a>
+      </li>
+      <li>
+        <a href="#arangetram" class="sidebar-menu-link js-dash-tab" data-tab="arangetram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Arangetram Tracker</span>
+        </a>
+      </li>
+      <li>
+        <a href="#bookings" class="sidebar-menu-link js-dash-tab" data-tab="bookings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>My Enrollments</span>
+        </a>
+      </li>
+      <li>
+        <a href="#book-wizard" class="sidebar-menu-link js-dash-tab" data-tab="book-wizard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <span>Enroll New Batch</span>
+        </a>
+      </li>
+      <li>
+        <a href="#payments" class="sidebar-menu-link js-dash-tab" data-tab="payments">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span>Tuition & Fees</span>
+        </a>
+      </li>
+      <li>
+        <a href="#profile" class="sidebar-menu-link js-dash-tab" data-tab="profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Student Profile</span>
+        </a>
+      </li>
+      <li>
+        <a href="#support" class="sidebar-menu-link js-dash-tab" data-tab="support">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Guru Feedback</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      
+      <a href="index.html" class="sidebar-menu-link js-logout-btn" style="color: #E55353;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>Sign Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MOBILE SIDEBAR BACKDROP OVERLAY -->
+  <div id="dash-sidebar-backdrop" class="sidebar-backdrop"></div>
+
+  <!-- DASHBOARD MAIN CONTAINER -->
+  <main class="dashboard-main">
+
+    <!-- TOPBAR -->
+    <header class="dashboard-topbar">
+      <div class="topbar-left">
+        <button id="dash-hamburger" class="mobile-hamburger" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <h2 id="dash-topbar-title" class="topbar-title">Student Overview</h2>
+      </div>
+
+      <div class="topbar-actions">
+        <!-- NOTIFICATIONS DROPDOWN -->
+        <div class="notif-wrapper">
+          <button id="notif-toggle-btn" class="notif-btn" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notif-badge-count">2</span>
+          </button>
+          <div id="notif-dropdown" class="notif-dropdown">
+            <div class="notif-header">
+              <span>Academy Notifications</span>
+              <button id="mark-all-read" style="background: none; border: none; color: var(--terracotta-bloom); font-size: 0.75rem; cursor: pointer;">Mark Read</button>
+            </div>
+            <ul class="notif-list">
+              <li class="notif-item unread">
+                <strong>REHEARSAL REMINDER</strong>
+                <span>Varnam Stage Rehearsal with Guru Vidushi Meenakshi is this Saturday at 9:00 AM.</span>
+              </li>
+              <li class="notif-item unread">
+                <strong>ARANGETRAM ORCHESTRA SYNC</strong>
+                <span>Mridangam and Nattuvangam coordination slot confirmed for Nov 21.</span>
+              </li>
+              <li class="notif-item">
+                <strong>SALANGAI POOJA NOTICE</strong>
+                <span>Consecration ceremony date finalized: Nov 18 at Kapaleeshwarar Temple.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" style="color: var(--text-main); border-color: var(--border-color);">
+          <span>◐</span>
+        </button>
+        <button class="ctrl-btn js-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction" style="color: var(--text-main); border-color: var(--border-color);">
+          <span>⇄</span>
+        </button>
+
+        <!-- STUDENT AVATAR BADGE -->
+        <div class="guest-profile-badge">
+          <img src="assets/images/student-avatar-2.jpg" alt="Priyamvada Natarajan avatar" class="guest-avatar-img">
+          <div class="guest-info">
+            <span class="guest-name">Priyamvada N.</span>
+            <span class="guest-id">NR-4092 • Arangetram</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT AREA WITH TABBED VIEWS -->
+    <div class="dashboard-content-container">
+
+      <!-- ==========================================
+           TAB 01: OVERVIEW
+           ========================================== -->
+      <section id="tab-overview" class="tab-view active">
+        <div class="dash-welcome-header" style="margin-bottom: 16px;">
+          <span class="section-tag" style="margin-bottom: 4px;">CLASSICAL DANCE ACADEMY PORTAL</span>
+          <h1 style="font-size: 1.85rem; margin-bottom: 4px;">NAMASKARAM, PRIYAMVADA</h1>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">Track your Bharatanatyam batch progress, view weekly sadhana schedules, and monitor Arangetram debut readiness.</p>
+        </div>
+
+        <!-- KPI SUMMARY CARDS -->
+        <div class="kpi-grid">
+          <div class="kpi-card hover-petal-card">
+            <span class="kpi-label">NEXT REHEARSAL</span>
+            <div class="kpi-value" style="font-size: 1.8rem;">SAT 9:00 AM</div>
+            <span class="kpi-subtext">Main Studio • Nataraja Hall</span>
+          </div>
+
+          <div class="kpi-card hover-petal-card">
+            <span class="kpi-label">ENROLLED BATCH</span>
+            <div class="kpi-value" style="font-size: 1.6rem;">Arangetram Track</div>
+            <span class="kpi-subtext">Senior Margam Soloist</span>
+          </div>
+
+          <div class="kpi-card hover-petal-card">
+            <span class="kpi-label">ARANGETRAM READINESS</span>
+            <div class="kpi-value">85%</div>
+            <span class="kpi-subtext">6 of 8 items Guru Approved</span>
+          </div>
+
+          <div class="kpi-card hover-petal-card">
+            <span class="kpi-label">SADHANA HOURS</span>
+            <div class="kpi-value">340 hrs</div>
+            <span class="kpi-subtext">Logged this semester</span>
+          </div>
+        </div>
+
+        <!-- FEATURED NEXT REHEARSAL PANEL -->
+        <div class="featured-workshop-panel hover-petal-card">
+          <div class="workshop-panel-content">
+            <div class="workshop-header-badges">
+              <span class="section-tag">UPCOMING INTENSIVE REHEARSAL</span>
+              <span class="workshop-badge-status">● CONFIRMED</span>
+            </div>
+            <h2>Varnam (Navarasa Charita) &amp; Tala Synchronization</h2>
+            <div class="workshop-meta-grid">
+              <div class="meta-item"><strong>Date:</strong> Saturday, Nov 14, 2026</div>
+              <div class="meta-item"><strong>Time:</strong> 9:00 AM – 12:30 PM</div>
+              <div class="meta-item"><strong>Guru:</strong> Vidushi Meenakshi Iyer &amp; Sri Sundaresan</div>
+              <div class="meta-item"><strong>Hall:</strong> Nataraja Wooden Sanctuary</div>
+            </div>
+            <p class="workshop-desc">
+              Full 45-minute unbroken run-through of the Adi Tala Varnam with live nattuvangam and mridangam percussionist. Bring practice salangai and rehearsal saree.
+            </p>
+            <div class="workshop-action-buttons">
+              <a href="#" class="btn btn-primary" data-switch-tab="arangetram">VIEW ARANGETRAM CHECKLIST →</a>
+              <a href="#" class="btn btn-secondary" data-switch-tab="schedules">VIEW FULL SCHEDULE</a>
+            </div>
+          </div>
+          <div class="image-leaf-container workshop-panel-image">
+            <img src="assets/images/program-arangetram.jpg" alt="Bharatanatyam arangetram dancer in stage lighting">
+          </div>
+        </div>
+
+        <!-- QUICK ARANGETRAM PROGRESS BANNER -->
+        <div class="arangetram-quick-banner" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--space-md); margin-top: 20px;">
+          <div class="arangetram-quick-content" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div>
+              <strong style="color: var(--terracotta-bloom); font-size: 1rem;">Arangetram Debut Preparation: 85% Completed</strong>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Target Debut Recital: December 12, 2026 • Narada Gana Sabha</div>
+            </div>
+            <a href="#" class="btn btn-secondary arangetram-quick-btn" style="padding: 6px 14px; font-size: 0.8rem;" data-switch-tab="arangetram">Open Tracker</a>
+          </div>
+          <div style="background: var(--bg-surface-elevated); height: 10px; border-radius: 999px; overflow: hidden;">
+            <div style="background: var(--terracotta-bloom); height: 100%; width: 85%; border-radius: 999px; transition: width 0.5s ease;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 02: ENROLLING IN BATCHES
+           ========================================== -->
+      <section id="tab-batches" class="tab-view">
+        <div class="tab-header-row">
+          <div class="tab-header-text">
+            <h2>ENROLLING IN BATCHES</h2>
+            <p>Explore current academy batches by skill level, join specialized masterclasses, or switch your ongoing batch.</p>
+          </div>
+          <a href="#" class="btn btn-primary" data-switch-tab="book-wizard">+ ENROLL IN NEW BATCH</a>
+        </div>
+
+        <!-- BATCH CARDS GRID -->
+        <div class="batch-cards-grid">
+          
+          <!-- Batch 1: Prarambhik -->
+          <div class="batch-enroll-card hover-petal-card">
+            <div class="batch-card-header">
+              <span class="section-tag">LEVEL 1 • BEGINNERS</span>
+              <span class="batch-price">$120 / mo</span>
+            </div>
+            <h3>Prarambhik — Adavu &amp; Tala Foundation</h3>
+            <p class="batch-desc">
+              Master the foundational 64 adavus, Aramandi posture, Asamyuta hand gestures (mudras), and basic Adi Talam recitation.
+            </p>
+            <div class="batch-meta">
+              <div><strong>Schedule:</strong> Mon &amp; Wed • 4:00 PM – 5:15 PM</div>
+              <div><strong>Guru:</strong> Vidushi Priyadarshini Rao</div>
+              <div><strong>Prerequisite:</strong> Age 6+ or beginners of any age</div>
+            </div>
+            <button class="btn btn-secondary batch-enroll-btn" onclick="showDashToast('Prarambhik Foundation batch selected. Request sent to Guru.');">
+              ENROLL IN PRARAMBHIK BATCH →
+            </button>
+          </div>
+
+          <!-- Batch 2: Madhyama -->
+          <div class="batch-enroll-card hover-petal-card">
+            <div class="batch-card-header">
+              <span class="section-tag">LEVEL 2 • INTERMEDIATE</span>
+              <span class="batch-price">$180 / mo</span>
+            </div>
+            <h3>Madhyama — Jatiswaram &amp; Shabdam</h3>
+            <p class="batch-desc">
+              Fast-paced teermanams, complex korvais, Sanchari bhava storytelling, and musical synchronization in Kalyani &amp; Vasantha ragams.
+            </p>
+            <div class="batch-meta">
+              <div><strong>Schedule:</strong> Tue &amp; Thu • 5:30 PM – 7:00 PM</div>
+              <div><strong>Guru:</strong> Guru Sri V. Sundaresan</div>
+              <div><strong>Prerequisite:</strong> 2+ years of completed Adavu training</div>
+            </div>
+            <button class="btn btn-secondary batch-enroll-btn" onclick="showDashToast('Madhyama batch enrollment request submitted.');">
+              ENROLL IN MADHYAMA BATCH →
+            </button>
+          </div>
+
+          <!-- Batch 3: Visharad -->
+          <div class="batch-enroll-card hover-petal-card">
+            <div class="batch-card-header">
+              <span class="section-tag">LEVEL 3 • ADVANCED</span>
+              <span class="batch-price">$240 / mo</span>
+            </div>
+            <h3>Visharad — Margam Repertoire &amp; Abhinaya</h3>
+            <p class="batch-desc">
+              Complete traditional Margam suite: Grand Varnams, expressive Padams, Javalis, and intricate Dhanashree Tillanas.
+            </p>
+            <div class="batch-meta">
+              <div><strong>Schedule:</strong> Wed &amp; Fri • 6:00 PM – 7:30 PM</div>
+              <div><strong>Guru:</strong> Vidushi Meenakshi Iyer</div>
+              <div><strong>Prerequisite:</strong> Audition or Madhyama certification</div>
+            </div>
+            <button class="btn btn-secondary batch-enroll-btn" onclick="showDashToast('Visharad repertoire enrollment requested.');">
+              ENROLL IN VISHARAD BATCH →
+            </button>
+          </div>
+
+          <!-- Batch 4: Arangetram Intensive (Current) -->
+          <div class="batch-enroll-card hover-petal-card enrolled-active">
+            <div class="batch-card-header">
+              <span class="workshop-badge-status">● CURRENTLY ENROLLED</span>
+              <span class="batch-price">Mentorship</span>
+            </div>
+            <h3>Arangetram Intensive Soloist Debut</h3>
+            <p class="batch-desc">
+              One-on-one guru mentorship, live 5-piece Carnatic orchestra coordination, stage stamina, Salangai Pooja, and full graduation recital preparation.
+            </p>
+            <div class="batch-meta">
+              <div><strong>Schedule:</strong> Saturdays 9:00 AM – 1:00 PM + 1-on-1 Slots</div>
+              <div><strong>Guru:</strong> Guru Dr. Rukmini Rajagopalan &amp; Vidushi Meenakshi</div>
+              <div><strong>Status:</strong> Active Solo Candidate (Debut Dec 2026)</div>
+            </div>
+            <button class="btn btn-primary batch-enroll-btn" data-switch-tab="arangetram">
+              VIEW ARANGETRAM TRACKER →
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 03: VIEWING SCHEDULES
+           ========================================== -->
+      <section id="tab-schedules" class="tab-view">
+        <div class="tab-header-row">
+          <div class="tab-header-text">
+            <h2>VIEWING SCHEDULES</h2>
+            <p>Your personalized weekly class timetable, guru one-on-one sessions, and orchestra rehearsals.</p>
+          </div>
+          <button class="btn btn-secondary" onclick="showDashToast('Schedule synced to Google & Apple Calendar.');">
+            📅 SYNC TO CALENDAR
+          </button>
+        </div>
+
+        <!-- WEEKLY SCHEDULE TABLE -->
+        <div class="table-responsive-wrapper">
+          <table class="dashboard-schedule-table">
+            <thead>
+              <tr>
+                <th class="col-datetime">Day &amp; Time</th>
+                <th class="col-session">Class / Rehearsal Session</th>
+                <th class="col-faculty">Guru / Faculty</th>
+                <th class="col-hall">Studio Hall</th>
+                <th class="col-type">Type</th>
+                <th class="col-action">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-datetime"><strong>Monday</strong><br><span style="font-size: 0.82rem; color: var(--text-muted);">5:30 PM – 7:00 PM</span></td>
+                <td class="col-session"><strong>Varnam Footwork &amp; Teermanams</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Adi Talam Jathi speed drills</span></td>
+                <td class="col-faculty">Vidushi Meenakshi Iyer</td>
+                <td class="col-hall">Nataraja Sanctuary</td>
+                <td class="col-type"><span class="workshop-badge-status">● Core Batch</span></td>
+                <td class="col-action"><button class="btn btn-secondary" onclick="showDashToast('Lesson notes opened.');">Notes</button></td>
+              </tr>
+              <tr>
+                <td class="col-datetime"><strong>Wednesday</strong><br><span style="font-size: 0.82rem; color: var(--text-muted);">5:30 PM – 7:00 PM</span></td>
+                <td class="col-session"><strong>Abhinaya &amp; Sanchari Bhava</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Padams &amp; Ashtapadi expressions</span></td>
+                <td class="col-faculty">Vidushi Meenakshi Iyer</td>
+                <td class="col-hall">Saraswati Studio</td>
+                <td class="col-type"><span class="workshop-badge-status">● Core Batch</span></td>
+                <td class="col-action"><button class="btn btn-secondary" onclick="showDashToast('Lyrics & Artham opened.');">Lyrics</button></td>
+              </tr>
+              <tr>
+                <td class="col-datetime"><strong>Thursday</strong><br><span style="font-size: 0.82rem; color: var(--text-muted);">6:00 PM – 7:15 PM</span></td>
+                <td class="col-session"><strong>Nattuvangam &amp; Sollukattu Lab</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Rhythmic recitation &amp; cymbals</span></td>
+                <td class="col-faculty">Guru Sri V. Sundaresan</td>
+                <td class="col-hall">Tala Chamber</td>
+                <td class="col-type"><span class="workshop-badge-status" style="background: rgba(36, 53, 42, 0.1); color: var(--text-main);">● Tala Lab</span></td>
+                <td class="col-action"><button class="btn btn-secondary" onclick="showDashToast('Tala audio track playing.');">Audio</button></td>
+              </tr>
+              <tr style="background: var(--bg-surface-elevated);">
+                <td class="col-datetime"><strong>Saturday</strong><br><span style="font-size: 0.82rem; color: var(--terracotta-bloom); font-weight: 700;">9:00 AM – 12:30 PM</span></td>
+                <td class="col-session"><strong>Full Margam Orchestra Rehearsal</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">With Mridangam, Violin &amp; Flute</span></td>
+                <td class="col-faculty">Full Faculty Ensemble</td>
+                <td class="col-hall">Main Auditorium Hall</td>
+                <td class="col-type"><span class="workshop-badge-status" style="background: var(--terracotta-bloom); color: #fff;">★ Arangetram</span></td>
+                <td class="col-action"><button class="btn btn-primary" onclick="showDashToast('Orchestra sequence loaded.');">Sequence</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="schedule-cta-card">
+          <div class="schedule-cta-text">
+            <strong>Need to schedule an extra 1-on-1 practice slot with your Guru?</strong>
+            <p>Senior Arangetram aspirants receive two dedicated 45-minute private coaching slots per week.</p>
+          </div>
+          <button class="btn btn-primary" onclick="showDashToast('Private coaching request sent to Guru Meenakshi.');">
+            + REQUEST 1-ON-1 SLOT
+          </button>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 04: TRACKING ARANGETRAM PREPARATION
+           ========================================== -->
+      <section id="tab-arangetram" class="tab-view">
+        <div class="tab-header-row">
+          <div class="tab-header-text">
+            <h2>TRACKING ARANGETRAM PREPARATION</h2>
+            <p>Item-by-item Margam repertoire checklist, orchestra synchronization, and stage milestone tracker.</p>
+          </div>
+          <div style="background: var(--bg-surface); padding: 8px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Overall Readiness:</span>
+            <span id="arangetram-progress-pct" style="font-size: 1.3rem; font-weight: 700; color: var(--terracotta-bloom);">85%</span>
+          </div>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="arangetram-target-box" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px; margin-bottom: 24px;">
+          <div class="arangetram-target-meta" style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px;">
+            <span>Target Debut Recital: <strong>December 12, 2026</strong></span>
+            <span>Venue: <strong>Narada Gana Sabha Main Auditorium, Chennai</strong></span>
+          </div>
+          <div style="background: var(--bg-surface-elevated); height: 12px; border-radius: 999px; overflow: hidden;">
+            <div id="arangetram-progress-bar" style="background: var(--terracotta-bloom); height: 100%; width: 85%; border-radius: 999px; transition: width 0.4s ease;"></div>
+          </div>
+        </div>
+
+        <!-- REPERTOIRE CHECKLIST -->
+        <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--text-main);">1. Traditional Margam Repertoire Suite</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+          Every item must be individually evaluated and certified by the Artistic Director and Nattuvangam Guru. Click checkbox to update status.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+          
+          <!-- Item 1: Pushpanjali -->
+          <div class="repertoire-row" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <input type="checkbox" class="js-arangetram-check" id="item-pushpanjali" checked style="width: 18px; height: 18px; accent-color: var(--terracotta-bloom); cursor: pointer;">
+              <div>
+                <label for="item-pushpanjali" style="font-weight: 700; font-size: 0.98rem; cursor: pointer;">01. Pushpanjali & Alarippu</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Ragam: Nattai • Talam: Misra Chapu • Duration: 8 mins</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="workshop-badge-status" style="background: rgba(36, 53, 42, 0.1); color: var(--botanical-deep);">✓ GURU APPROVED</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Mastered in 3 speeds</span>
+            </div>
+          </div>
+
+          <!-- Item 2: Jatiswaram -->
+          <div class="repertoire-row" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <input type="checkbox" class="js-arangetram-check" id="item-jatiswaram" checked style="width: 18px; height: 18px; accent-color: var(--terracotta-bloom); cursor: pointer;">
+              <div>
+                <label for="item-jatiswaram" style="font-weight: 700; font-size: 0.98rem; cursor: pointer;">02. Jatiswaram</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Ragam: Kalyani • Talam: Rupaka • Duration: 12 mins</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="workshop-badge-status" style="background: rgba(36, 53, 42, 0.1); color: var(--botanical-deep);">✓ GURU APPROVED</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Swara footwork synchronized</span>
+            </div>
+          </div>
+
+          <!-- Item 3: Shabdam -->
+          <div class="repertoire-row" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <input type="checkbox" class="js-arangetram-check" id="item-shabdam" checked style="width: 18px; height: 18px; accent-color: var(--terracotta-bloom); cursor: pointer;">
+              <div>
+                <label for="item-shabdam" style="font-weight: 700; font-size: 0.98rem; cursor: pointer;">03. Shabdam (Sarasijakshulu)</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Ragam: Ragamalika • Talam: Misra Chapu • Duration: 10 mins</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="workshop-badge-status" style="background: rgba(36, 53, 42, 0.1); color: var(--botanical-deep);">✓ GURU APPROVED</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Introduction to Abhinaya</span>
+            </div>
+          </div>
+
+          <!-- Item 4: Varnam (Centerpiece) -->
+          <div class="repertoire-row" style="background: var(--bg-surface-elevated); border: 1.5px solid var(--terracotta-bloom); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <input type="checkbox" class="js-arangetram-check" id="item-varnam" checked style="width: 18px; height: 18px; accent-color: var(--terracotta-bloom); cursor: pointer;">
+              <div>
+                <label for="item-varnam" style="font-weight: 700; font-size: 0.98rem; color: var(--terracotta-bloom); cursor: pointer;">04. Varnam — Navarasa Charita (Centerpiece)</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Ragam: Shanmukhapriya • Talam: Adi (2 Kalai) • Duration: 42 mins</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="workshop-badge-status" style="background: var(--terracotta-bloom); color: #fff;">● POLISHING SANCHARIS</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Teermanams locked • Sanchari 4 in refinement</span>
+            </div>
+          </div>
+
+          <!-- Item 5: Padam -->
+          <div class="repertoire-row" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <input type="checkbox" class="js-arangetram-check" id="item-padam" checked style="width: 18px; height: 18px; accent-color: var(--terracotta-bloom); cursor: pointer;">
+              <div>
+                <label for="item-padam" style="font-weight: 700; font-size: 0.98rem; cursor: pointer;">05. Padam (Krishna Nee Begane)</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Ragam: Yamunakalyani • Talam: Misra Chapu • Duration: 12 mins</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="workshop-badge-status" style="background: rgba(36, 53, 42, 0.1); color: var(--botanical-deep);">✓ GURU APPROVED</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Vatsalya & Bhakti Bhava</span>
+            </div>
+          </div>
+
+          <!-- Item 6: Javali -->
+          <div class="repertoire-row" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <input type="checkbox" class="js-arangetram-check" id="item-javali" style="width: 18px; height: 18px; accent-color: var(--terracotta-bloom); cursor: pointer;">
+              <div>
+                <label for="item-javali" style="font-weight: 700; font-size: 0.98rem; cursor: pointer;">06. Javali / Ashtapadi (Kapi Ragam)</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Ragam: Kapi • Talam: Adi • Duration: 8 mins</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="workshop-badge-status" style="background: rgba(201, 111, 85, 0.15); color: var(--terracotta-bloom);">● FINAL TOUCHES</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Scheduled evaluation: Nov 16</span>
+            </div>
+          </div>
+
+          <!-- Item 7: Tillana -->
+          <div class="repertoire-row" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <input type="checkbox" class="js-arangetram-check" id="item-tillana" checked style="width: 18px; height: 18px; accent-color: var(--terracotta-bloom); cursor: pointer;">
+              <div>
+                <label for="item-tillana" style="font-weight: 700; font-size: 0.98rem; cursor: pointer;">07. Dhanashree Tillana (Maharaja Swathi Thirunal)</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Ragam: Dhanashree • Talam: Adi • Duration: 10 mins</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="workshop-badge-status" style="background: rgba(36, 53, 42, 0.1); color: var(--botanical-deep);">✓ STAGE READY</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">High-energy rhythm finish</span>
+            </div>
+          </div>
+
+          <!-- Item 8: Mangalam -->
+          <div class="repertoire-row" style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <input type="checkbox" class="js-arangetram-check" id="item-mangalam" checked style="width: 18px; height: 18px; accent-color: var(--terracotta-bloom); cursor: pointer;">
+              <div>
+                <label for="item-mangalam" style="font-weight: 700; font-size: 0.98rem; cursor: pointer;">08. Mangalam & Shloka Dedication</label>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Ragam: Saurashtram • Talam: Adi • Duration: 5 mins</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="workshop-badge-status" style="background: rgba(36, 53, 42, 0.1); color: var(--botanical-deep);">✓ STAGE READY</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Final salutations to Nataraja & Gurus</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- STAGE & ORCHESTRA PREPARATION MILESTONES -->
+        <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--text-main);">2. Stage Logistics & Orchestra Milestones</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+            <strong style="color: var(--terracotta-bloom); display: block; margin-bottom: 4px;">Salangai Pooja (Bells Consecration)</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Scheduled for Nov 18 at Sri Kapaleeshwarar Temple sanctum. Salangai blessed by Guru.</p>
+            <span class="workshop-badge-status">● DATE LOCKED</span>
+          </div>
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+            <strong style="color: var(--terracotta-bloom); display: block; margin-bottom: 4px;">Live Carnatic Orchestra Sync</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Nattuvangam, Mridangam, Vocal, Violin, and Flute. 3 of 5 full rehearsals completed.</p>
+            <span class="workshop-badge-status">● 3 / 5 SESSIONS COMPLETED</span>
+          </div>
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+            <strong style="color: var(--terracotta-bloom); display: block; margin-bottom: 4px;">Kanchipuram Silk Costume Trial</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Pleated crimson & mustard silk costume fitted. Temple jewelry set reserved.</p>
+            <span class="workshop-badge-status">● 1ST TRIAL APPROVED</span>
+          </div>
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+            <strong style="color: var(--terracotta-bloom); display: block; margin-bottom: 4px;">Auditorium & Sound Staging</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Narada Gana Sabha Main Hall booked for Dec 12, 5:30 PM. Stage lighting designer assigned.</p>
+            <span class="workshop-badge-status">● VENUE CONFIRMED</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 05: MY ENROLLMENTS / BOOKINGS
+           ========================================== -->
+      <section id="tab-bookings" class="tab-view">
+        <div class="tab-header-row">
+          <div class="tab-header-text">
+            <h2>MY ENROLLED BATCHES &amp; SESSIONS</h2>
+            <p>Active term registrations, rehearsal passes, and past completed training modules.</p>
+          </div>
+          <a href="#" class="btn btn-primary" data-switch-tab="book-wizard">+ ENROLL IN BATCH</a>
+        </div>
+
+        <div class="booking-cards-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+          <!-- Enrollment 1 -->
+          <div class="booking-card hover-petal-card" style="background: var(--bg-surface); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+            <div style="display: flex; gap: var(--space-md); align-items: center;">
+              <div class="image-leaf-container" style="width: 100px; height: 80px; flex-shrink: 0;">
+                <img src="assets/images/program-arangetram.jpg" alt="Arangetram coaching session">
+              </div>
+              <div>
+                <span class="workshop-badge-status">● ACTIVE CANDIDATE</span>
+                <h4 style="margin-block: 4px;">Arangetram Solo Debut Mentorship</h4>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">Term: Fall/Winter 2026 • Guru Vidushi Meenakshi • Ref: NR-AR-4092</div>
+              </div>
+            </div>
+            <div class="booking-card-actions" style="display: flex; gap: 8px;">
+              <button class="btn btn-secondary" style="padding: 8px 14px; font-size: 0.8rem;" onclick="showDashToast('Syllabus sheet opened.');">Syllabus</button>
+              <button class="btn btn-primary" style="padding: 8px 14px; font-size: 0.8rem;" data-switch-tab="arangetram">Track Progress</button>
+            </div>
+          </div>
+
+          <!-- Enrollment 2 -->
+          <div class="booking-card hover-petal-card" style="background: var(--bg-surface); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+            <div style="display: flex; gap: var(--space-md); align-items: center;">
+              <div class="image-leaf-container" style="width: 100px; height: 80px; flex-shrink: 0;">
+                <img src="assets/images/program-intermediate.jpg" alt="Varnam coaching session">
+              </div>
+              <div>
+                <span class="workshop-badge-status">● ACTIVE BATCH</span>
+                <h4 style="margin-block: 4px;">Madhyama Varnam & Footwork Masterclass</h4>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">Mon & Wed 5:30 PM • Ref: NR-MD-2026</div>
+              </div>
+            </div>
+            <div class="booking-card-actions" style="display: flex; gap: 8px;">
+              <button class="btn btn-secondary" style="padding: 8px 14px; font-size: 0.8rem;" onclick="showDashToast('Term fee receipt downloaded.');">Receipt</button>
+              <button class="btn btn-primary" style="padding: 8px 14px; font-size: 0.8rem;" data-switch-tab="schedules">View Timings</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 06: INTERACTIVE 5-STEP ENROLLMENT WIZARD
+           ========================================== -->
+      <section id="tab-book-wizard" class="tab-view">
+        <div style="margin-bottom: var(--space-lg);">
+          <span class="section-tag">ONLINE ADMISSION PORTAL</span>
+          <h2>ENROLL IN A CLASSICAL DANCE BATCH</h2>
+          <p>Complete your semester enrollment or specialized masterclass registration in 5 simple steps.</p>
+        </div>
+
+        <div id="booking-wizard-container" class="booking-wizard-card hover-petal-card">
+          <!-- WIZARD PROGRESS BAR & STEP NAV -->
+          <div class="wizard-nav-wrapper" style="position: relative; margin-bottom: var(--space-2xl);">
+            <div class="wizard-progress-track">
+              <div class="wizard-progress-fill" id="wizard-progress-fill" style="width: 0%;"></div>
+            </div>
+            
+            <div class="wizard-steps-nav">
+              <div class="wizard-step-pill active" data-step="1">
+                <span class="wizard-step-num">1</span>
+                <span>Select Level</span>
+              </div>
+              <div class="wizard-step-pill" data-step="2">
+                <span class="wizard-step-num">2</span>
+                <span>Preferred Batch</span>
+              </div>
+              <div class="wizard-step-pill" data-step="3">
+                <span class="wizard-step-num">3</span>
+                <span>Class Timings</span>
+              </div>
+              <div class="wizard-step-pill" data-step="4">
+                <span class="wizard-step-num">4</span>
+                <span>Student Details</span>
+              </div>
+              <div class="wizard-step-pill" data-step="5">
+                <span class="wizard-step-num">5</span>
+                <span>Confirmation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 1: SELECT LEVEL -->
+          <div class="wizard-step-card" data-step="1">
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Step 1: Select Your Dance Program Level</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Choose the appropriate level based on your prior Bharatanatyam experience.</p>
+
+            <div class="wizard-select-group">
+              <div class="wizard-select-item hover-petal-card selected" data-batch="Prarambhik (Beginners Adavu)" data-fee="$120 / Mo">
+                <strong style="color: var(--terracotta-bloom); display: block;">Level 1 — Prarambhik</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Basic Adavus, Aramandi, Mudras & Tala. No prior experience needed.</span>
+                <div style="margin-top: 8px; font-weight: 700;">$120 / month</div>
+              </div>
+              <div class="wizard-select-item hover-petal-card" data-batch="Madhyama (Intermediate Varnam)" data-fee="$180 / Mo">
+                <strong style="color: var(--terracotta-bloom); display: block;">Level 2 — Madhyama</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Alarippu, Jatiswaram, Shabdam & expressive storytelling.</span>
+                <div style="margin-top: 8px; font-weight: 700;">$180 / month</div>
+              </div>
+              <div class="wizard-select-item hover-petal-card" data-batch="Visharad (Advanced Margam)" data-fee="$240 / Mo">
+                <strong style="color: var(--terracotta-bloom); display: block;">Level 3 — Visharad</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Complete Margam repertoire, Varnams, Padams & Tillanas.</span>
+                <div style="margin-top: 8px; font-weight: 700;">$240 / month</div>
+              </div>
+              <div class="wizard-select-item hover-petal-card" data-batch="Arangetram Intensive Debut" data-fee="Comprehensive Mentorship">
+                <strong style="color: var(--terracotta-bloom); display: block;">Level 4 — Arangetram Debut</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Solo recital coaching, live orchestra, Salangai Pooja & debut.</span>
+                <div style="margin-top: 8px; font-weight: 700;">Solo Mentorship</div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-primary" data-wizard-next>CONTINUE TO BATCH SELECTION →</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: PREFERRED BATCH -->
+          <div class="wizard-step-card" data-step="2" style="display: none;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Step 2: Choose Your Training Batch</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Select either weekday evening or weekend morning academy sessions.</p>
+
+            <div class="wizard-select-group">
+              <div class="wizard-select-item hover-petal-card selected">
+                <strong style="display: block;">Weekday Batch (Mon & Wed)</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">5:30 PM – 7:00 PM • Dedicated studio time after school/work</span>
+              </div>
+              <div class="wizard-select-item hover-petal-card">
+                <strong style="display: block;">Weekend Intensive Batch (Sat & Sun)</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">9:30 AM – 11:30 AM • Immersive 2-hour weekend sadhana</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <button class="btn btn-secondary" data-wizard-prev>← BACK</button>
+              <button class="btn btn-primary" data-wizard-next>CONTINUE TO TIMINGS →</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: TIMINGS -->
+          <div class="wizard-step-card" data-step="3" style="display: none;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Step 3: Studio Hall & Faculty Allocation</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Sessions take place in the sprung wooden Nataraja or Saraswati studios.</p>
+
+            <div style="background: var(--bg-surface-elevated); padding: 18px; border-radius: var(--radius-md); margin-bottom: 24px;">
+              <div><strong>Primary Studio:</strong> Nataraja Wooden Sanctuary (Ground Floor)</div>
+              <div><strong>Faculty Lead:</strong> Vidushi Meenakshi Iyer (Senior Abhinaya Guru)</div>
+              <div><strong>Batch Size:</strong> Maximum 10 disciples for dedicated individual attention</div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <button class="btn btn-secondary" data-wizard-prev>← BACK</button>
+              <button class="btn btn-primary" data-wizard-next>STUDENT PROFILE →</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: STUDENT DETAILS -->
+          <div class="wizard-step-card" data-step="4" style="display: none;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Step 4: Confirm Student Details</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Verify your academy admission contact information.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px;">
+              <div class="form-group">
+                <label>Student Full Name</label>
+                <input type="text" class="form-control" value="Priyamvada Natarajan" readonly>
+              </div>
+              <div class="form-group">
+                <label>Student ID</label>
+                <input type="text" class="form-control" value="NR-4092" readonly>
+              </div>
+              <div class="form-group">
+                <label>Emergency Contact</label>
+                <input type="text" class="form-control" value="+1 (555) 234-5678">
+              </div>
+              <div class="form-group">
+                <label>Prior Classical Training</label>
+                <input type="text" class="form-control" value="6 Years Bharatanatyam (Kalakshetra style)">
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <button class="btn btn-secondary" data-wizard-prev>← BACK</button>
+              <button class="btn btn-primary" data-wizard-next>REVIEW & CONFIRM →</button>
+            </div>
+          </div>
+
+          <!-- STEP 5: CONFIRMATION -->
+          <div class="wizard-step-card" data-step="5" style="display: none;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Step 5: Review & Complete Enrollment</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Please review your batch selection before finalizing enrollment.</p>
+
+            <div style="background: var(--bg-surface-elevated); padding: 20px; border-radius: var(--radius-md); margin-bottom: 24px; border: 1px solid var(--border-color);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span>Selected Program:</span>
+                <strong id="sum-batch" style="color: var(--terracotta-bloom);">Prarambhik (Beginners Adavu)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span>Tuition Fee:</span>
+                <strong id="sum-fee">$120 / Mo</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span>Student Name:</span>
+                <span>Priyamvada Natarajan</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Commencement:</span>
+                <span>Upcoming First Monday of the Month</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <button class="btn btn-secondary" data-wizard-prev>← BACK</button>
+              <button id="wizard-confirm-btn" class="btn btn-primary">CONFIRM BATCH ENROLLMENT →</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 07: TUITION & PAYMENTS
+           ========================================== -->
+      <section id="tab-payments" class="tab-view">
+        <div class="tab-header-row">
+          <div class="tab-header-text">
+            <h2>TUITION &amp; PAYMENT HISTORY</h2>
+            <p>View your monthly batch fee receipts, Arangetram orchestra deposits, and invoices.</p>
+          </div>
+          <button class="btn btn-primary" onclick="showDashToast('Redirecting to secure fee payment portal...');">
+            PAY UPCOMING TUITION →
+          </button>
+        </div>
+
+        <div class="table-responsive-wrapper">
+          <table class="dashboard-invoice-table">
+            <thead>
+              <tr>
+                <th class="col-inv-ref">Invoice Ref</th>
+                <th class="col-inv-desc">Description</th>
+                <th class="col-inv-date">Date</th>
+                <th class="col-inv-amount">Amount</th>
+                <th class="col-inv-status">Status</th>
+                <th class="col-inv-action">Receipt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-inv-ref"><strong>INV-2026-1102</strong></td>
+                <td class="col-inv-desc">November 2026 Monthly Intensive Tuition</td>
+                <td class="col-inv-date">Nov 01, 2026</td>
+                <td class="col-inv-amount" style="font-weight: 700;">$180.00</td>
+                <td class="col-inv-status"><span class="workshop-badge-status">● PAID</span></td>
+                <td class="col-inv-action"><button class="btn btn-secondary" onclick="showDashToast('Receipt PDF downloaded.');">Download</button></td>
+              </tr>
+              <tr>
+                <td class="col-inv-ref"><strong>INV-2026-1014</strong></td>
+                <td class="col-inv-desc">Arangetram 5-Piece Orchestra Rehearsal Deposit</td>
+                <td class="col-inv-date">Oct 14, 2026</td>
+                <td class="col-inv-amount" style="font-weight: 700;">$450.00</td>
+                <td class="col-inv-status"><span class="workshop-badge-status">● PAID</span></td>
+                <td class="col-inv-action"><button class="btn btn-secondary" onclick="showDashToast('Receipt PDF downloaded.');">Download</button></td>
+              </tr>
+              <tr>
+                <td class="col-inv-ref"><strong>INV-2026-1001</strong></td>
+                <td class="col-inv-desc">October 2026 Monthly Intensive Tuition</td>
+                <td class="col-inv-date">Oct 01, 2026</td>
+                <td class="col-inv-amount" style="font-weight: 700;">$180.00</td>
+                <td class="col-inv-status"><span class="workshop-badge-status">● PAID</span></td>
+                <td class="col-inv-action"><button class="btn btn-secondary" onclick="showDashToast('Receipt PDF downloaded.');">Download</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      </section>
+
+      <!-- ==========================================
+           TAB 08: STUDENT PROFILE
+           ========================================== -->
+      <section id="tab-profile" class="tab-view">
+        <div style="margin-bottom: var(--space-lg);">
+          <span class="section-tag">DISCIPLE PROFILE</span>
+          <h2>STUDENT & SADHANA RECORD</h2>
+          <p>Maintain your student personal details, guru-shishya parampara lineage records, and certifications.</p>
+        </div>
+
+        <div style="background: var(--bg-surface); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color); max-width: 800px;">
+          <form id="profile-form">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 24px;">
+              <img src="assets/images/student-avatar-2.jpg" alt="Priyamvada" style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 3px solid var(--terracotta-bloom);">
+              <div>
+                <h3 style="margin-bottom: 2px;">Priyamvada Natarajan</h3>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Senior Disciple • Arangetram Debut Candidate 2026</span>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+              <div class="form-group">
+                <label for="prof-name">Full Name</label>
+                <input id="prof-name" type="text" class="form-control" value="Priyamvada Natarajan" required>
+              </div>
+              <div class="form-group">
+                <label for="prof-email">Email Address</label>
+                <input id="prof-email" type="email" class="form-control" value="priyamvada.dance@gmail.com" required>
+              </div>
+              <div class="form-group">
+                <label for="prof-guru">Assigned Primary Guru</label>
+                <input id="prof-guru" type="text" class="form-control" value="Guru Vidushi Meenakshi Iyer" readonly>
+              </div>
+              <div class="form-group">
+                <label for="prof-tradition">Tradition / Bani</label>
+                <input id="prof-tradition" type="text" class="form-control" value="Kalakshetra & Pandanallur Style" readonly>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">SAVE PROFILE CHANGES →</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 09: GURU FEEDBACK & SUPPORT
+           ========================================== -->
+      <section id="tab-support" class="tab-view">
+        <div style="margin-bottom: var(--space-lg);">
+          <span class="section-tag">GURU-SHISHYA MENTORSHIP</span>
+          <h2>GURU FEEDBACK & NOTES</h2>
+          <p>Recent technical corrections, tala observations, and direct guidance from your Gurus.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <!-- Recent Guru Feedback Cards -->
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <strong style="color: var(--terracotta-bloom);">Guru Vidushi Meenakshi Iyer</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">2 days ago</span>
+              </div>
+              <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 8px;">
+                "Excellent depth in Aramandi during the 3rd speed teermanam of the Shanmukhapriya Varnam. In the sanchari where Yashoda sees the universe in Krishna's mouth, hold the Adbhuta (wonder) rasa in your eyes for two extra beats before concluding the cycle."
+              </p>
+              <span class="workshop-badge-status">● VARNAM CORRECTION</span>
+            </div>
+
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <strong style="color: var(--terracotta-bloom);">Guru Sri V. Sundaresan (Nattuvangam)</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Nov 04, 2026</span>
+              </div>
+              <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 8px;">
+                "In the Dhanashree Tillana, keep the foot strikes sharply on the 'Dhi-thom' syllables. The mridangam sync in the fast speed was crisp. Continue practicing solkattu recitation at 120 BPM."
+              </p>
+              <span class="workshop-badge-status">● TALA & FOOTWORK</span>
+            </div>
+          </div>
+
+          <!-- Send Message to Guru Form -->
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 22px;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 6px;">SEND A NOTE TO YOUR GURU</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Ask a question regarding your repertoire, tala cycle, or request video review.</p>
+
+            <form onsubmit="event.preventDefault(); showDashToast('Message delivered to Guru Meenakshi. Review will be shared in class.');">
+              <div class="form-group" style="margin-bottom: 12px;">
+                <label for="supp-subject">Item / Repertoire Topic</label>
+                <select id="supp-subject" class="form-control">
+                  <option>Varnam (Navarasa Charita) Sanchari Clarification</option>
+                  <option>Jatiswaram Speed 3 Footwork Question</option>
+                  <option>Arangetram Orchestra Schedule Request</option>
+                  <option>Salangai Pooja Arrangements</option>
+                  <option>Costume Fitting & Temple Jewelry Query</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label for="supp-msg">Your Question or Sadhana Update *</label>
+                <textarea id="supp-msg" class="form-control" rows="4" placeholder="Detail your query or share your practice video link for Guru feedback..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                SUBMIT MESSAGE TO GURU →
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
