@@ -13,11 +13,11 @@
   display: flex;
 }
 
-/* Sidebar Navigation */
+/* Sidebar Navigation (White in Light Theme, Dark Botanical in Dark Theme) */
 .dashboard-sidebar {
   width: 280px;
-  background-color: var(--botanical-deep);
-  color: var(--petal-cream);
+  background-color: #FFFFFF;
+  color: var(--text-main);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -26,8 +26,9 @@
   inset-inline-start: 0;
   z-index: 100;
   padding: 20px 16px;
-  border-inline-end: 1px solid rgba(247, 241, 231, 0.1);
-  transition: transform var(--transition-smooth);
+  border-inline-end: 1px solid var(--border-color);
+  box-shadow: 2px 0 16px rgba(45, 9, 17, 0.03);
+  transition: transform var(--transition-smooth), background-color var(--transition-smooth), border-color var(--transition-smooth);
 }
 
 .sidebar-header {
@@ -36,6 +37,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.dashboard-sidebar .brand-logo,
+.dashboard-sidebar .brand-name,
+.dashboard-sidebar .sidebar-close-btn {
+  color: var(--text-main);
 }
 
 .dashboard-sidebar .brand-name {
@@ -62,7 +69,7 @@
   align-items: center;
   gap: 11px;
   padding: 9.5px 14px;
-  color: var(--text-inverse-muted);
+  color: var(--text-muted);
   border-radius: var(--radius-md);
   font-size: 0.89rem;
   font-weight: 500;
@@ -71,9 +78,9 @@
   text-decoration: none;
 }
 
-.sidebar-menu-link:hover, .sidebar-menu-link.active {
-  background-color: rgba(247, 241, 231, 0.1);
-  color: var(--petal-cream);
+.sidebar-menu-link:hover {
+  background-color: rgba(184, 37, 59, 0.07);
+  color: var(--terracotta-bloom);
 }
 
 .sidebar-menu-link.active {
@@ -97,10 +104,37 @@
 .sidebar-footer {
   margin-top: auto;
   padding-top: 14px;
-  border-top: 1px solid rgba(247, 241, 231, 0.1);
+  border-top: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+/* Dark Theme Sidebar Overrides */
+[data-theme="dark"] .dashboard-sidebar {
+  background-color: var(--botanical-deep);
+  color: var(--petal-cream);
+  border-inline-end: 1px solid rgba(247, 241, 231, 0.1);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .dashboard-sidebar .brand-logo,
+[data-theme="dark"] .dashboard-sidebar .brand-name,
+[data-theme="dark"] .dashboard-sidebar .sidebar-close-btn {
+  color: var(--petal-cream);
+}
+
+[data-theme="dark"] .sidebar-menu-link {
+  color: var(--text-inverse-muted);
+}
+
+[data-theme="dark"] .sidebar-menu-link:hover {
+  background-color: rgba(247, 241, 231, 0.1);
+  color: var(--petal-cream);
+}
+
+[data-theme="dark"] .sidebar-footer {
+  border-top: 1px solid rgba(247, 241, 231, 0.1);
 }
 
 /* Main Dashboard Area */
