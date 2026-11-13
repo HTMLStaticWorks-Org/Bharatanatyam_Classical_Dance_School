@@ -382,6 +382,262 @@ img {
   border-color: rgba(201, 111, 85, 0.4);
 }
 
+/* 2b. Guru Circular Portrait Cards */
+.guru-portrait-grid {
+  padding-top: 84px;
+  row-gap: 112px !important;
+}
+
+.guru-portrait-card {
+  position: relative;
+  background: var(--bg-surface-elevated);
+  border: 1px solid rgba(197, 155, 39, 0.32);
+  border-radius: 16px;
+  padding: 102px 20px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.guru-portrait-avatar {
+  position: absolute;
+  top: -84px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(197, 155, 39, 0.55);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  background: var(--bg-surface-elevated);
+}
+
+.guru-portrait-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.guru-portrait-card:hover .guru-portrait-avatar img {
+  transform: scale(1.06);
+}
+
+.guru-portrait-role {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terracotta-bloom);
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+.guru-portrait-name {
+  font-family: var(--font-serif);
+  font-size: 1.24rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+
+.guru-portrait-bio {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.guru-portrait-specialty {
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(197, 155, 39, 0.32);
+  background: rgba(197, 155, 39, 0.05);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .guru-portrait-specialty {
+  background: rgba(0, 0, 0, 0.22);
+  color: var(--text-inverse-muted);
+}
+
+/* 2c. Home 2 Manifesto Split Editorial Layout */
+.manifesto-split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  margin-top: var(--space-2xl);
+}
+
+.manifesto-visual-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.32);
+  aspect-ratio: 4 / 5;
+}
+
+.manifesto-visual-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.manifesto-visual-caption {
+  position: absolute;
+  inset: auto 16px 16px 16px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(24, 6, 10, 0.84);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 155, 39, 0.3);
+  color: var(--petal-cream);
+}
+
+.manifesto-visual-caption blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  margin: 0 0 6px;
+  color: var(--petal-cream);
+}
+
+.manifesto-visual-caption cite {
+  font-style: normal;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--temple-gold);
+}
+
+.manifesto-pillar-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+}
+
+.manifesto-pillar-list::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  bottom: 28px;
+  left: 39px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(197, 155, 39, 0.55), rgba(184, 37, 59, 0.35), transparent);
+}
+
+.manifesto-pillar-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.16);
+  transition: transform var(--transition-fast);
+}
+
+.manifesto-pillar-row:first-child {
+  padding-top: 0;
+}
+
+.manifesto-pillar-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.manifesto-pillar-row:hover {
+  transform: translateX(6px);
+}
+
+.manifesto-pillar-node {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid rgba(197, 155, 39, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--temple-gold);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.manifesto-pillar-row:hover .manifesto-pillar-node {
+  background: var(--terracotta-bloom);
+  border-color: var(--terracotta-bloom);
+  color: var(--petal-cream);
+}
+
+.manifesto-pillar-content {
+  flex: 1;
+}
+
+.manifesto-pillar-kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terracotta-bloom);
+  margin-bottom: 4px;
+}
+
+.manifesto-pillar-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px;
+}
+
+.manifesto-pillar-desc {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.manifesto-pillar-tags {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--temple-gold);
+}
+
+@media (max-width: 900px) {
+  .manifesto-split {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto-visual-frame {
+    max-width: 480px;
+    margin-inline: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
 /* 3. Image Leaf Morphing Zoom */
 .image-leaf-container {
   overflow: hidden;
@@ -1792,7 +2048,7 @@ img {
 
 .inner-hero.hero-performances {
   background-image: url('../images/banner-performances.jpg');
-  background-position: center 40%;
+  background-position: center 8%;
 }
 
 .inner-hero.hero-pricing {

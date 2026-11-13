@@ -36,7 +36,7 @@
 
       <div class="nav-actions">
         <a href="dashboard.html" class="ctrl-btn" aria-label="Student Dashboard" title="Student Dashboard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </a>
         <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
           <span>◐</span>
@@ -69,16 +69,16 @@
       <li><a href="contact.html" class="mobile-drawer-link">Contact</a></li>
     </ul>
     <div class="drawer-controls">
-      <a href="login.html" class="nav-primary-cta" style="width: 100%; text-align: center;">
-        <span>Student Portal</span>
-      </a>
       <div class="ctrl-group">
         <a href="dashboard.html" class="ctrl-btn" aria-label="Student Dashboard" title="Student Dashboard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </a>
         <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme"><span>◐</span></button>
         <button class="ctrl-btn js-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction"><span>⇄</span></button>
       </div>
+      <a href="login.html" class="nav-primary-cta" style="width: 100%; text-align: center;">
+        <span>Student Portal</span>
+      </a>
     </div>
   </div>
 
@@ -146,66 +146,58 @@
           <p>Celebrated performers, scholars, and gurus dedicated to nurturing the next generation of soloists.</p>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-4 guru-portrait-grid">
           
           <!-- Guru 1: Founder -->
-          <div class="hover-petal-card" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden;">
-            <div class="image-leaf-container" style="height: 260px;">
+          <div class="hover-petal-card guru-portrait-card">
+            <div class="guru-portrait-avatar">
               <img src="assets/images/guru-founder.jpg" alt="Guru Dr. Rukmini Rajagopalan - Founder & Artistic Director">
             </div>
-            <div style="padding: 20px;">
-              <span class="workshop-badge-status" style="margin-bottom: 6px;">FOUNDER & ARTISTIC DIRECTOR</span>
-              <h3 style="margin-block: 6px 4px; font-size: 1.3rem;">Guru Dr. Rukmini Rajagopalan</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
-                Direct disciple of legendary Kalakshetra maestros with over 45 years of performing and teaching experience. Has guided more than 180 disciples to acclaimed Arangetrams worldwide.
-              </p>
-              <div style="font-size: 0.8rem; color: var(--terracotta-bloom); font-weight: 600;">Specialty: Grand Margam Varnams & Natya Shastra Theory</div>
-            </div>
+            <span class="guru-portrait-role">FOUNDER & ARTISTIC DIRECTOR</span>
+            <h3 class="guru-portrait-name">Guru Dr. Rukmini Rajagopalan</h3>
+            <p class="guru-portrait-bio">
+              Direct disciple of legendary Kalakshetra maestros with over 45 years of performing and teaching experience. Has guided more than 180 disciples to acclaimed Arangetrams worldwide.
+            </p>
+            <div class="guru-portrait-specialty">Specialty: Grand Margam Varnams & Natya Shastra Theory</div>
           </div>
 
           <!-- Guru 2: Nattuvangam Maestro -->
-          <div class="hover-petal-card" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden;">
-            <div class="image-leaf-container" style="height: 260px;">
+          <div class="hover-petal-card guru-portrait-card">
+            <div class="guru-portrait-avatar">
               <img src="assets/images/guru-maestro.jpg" alt="Guru Sri V. Sundaresan - Nattuvangam & Tala Maestro">
             </div>
-            <div style="padding: 20px;">
-              <span class="workshop-badge-status" style="margin-bottom: 6px;">NATTUVANGAM & TALA MAESTRO</span>
-              <h3 style="margin-block: 6px 4px; font-size: 1.3rem;">Guru Sri V. Sundaresan</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
-                Renowned for his electrifying rhythmic articulation on bronze taalam cymbals and solkattu recitation. Directs the rhythm section for all academy Arangetrams and festival recitals.
-              </p>
-              <div style="font-size: 0.8rem; color: var(--terracotta-bloom); font-weight: 600;">Specialty: Teermanam Choreography & Complex Tala Cycles</div>
-            </div>
+            <span class="guru-portrait-role">NATTUVANGAM & TALA MAESTRO</span>
+            <h3 class="guru-portrait-name">Guru Sri V. Sundaresan</h3>
+            <p class="guru-portrait-bio">
+              Renowned for his electrifying rhythmic articulation on bronze taalam cymbals and solkattu recitation. Directs the rhythm section for all academy Arangetrams and festival recitals.
+            </p>
+            <div class="guru-portrait-specialty">Specialty: Teermanam Choreography & Complex Tala Cycles</div>
           </div>
 
           <!-- Guru 3: Abhinaya Guru -->
-          <div class="hover-petal-card" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden;">
-            <div class="image-leaf-container" style="height: 260px;">
+          <div class="hover-petal-card guru-portrait-card">
+            <div class="guru-portrait-avatar">
               <img src="assets/images/guru-teacher.jpg" alt="Vidushi Meenakshi Iyer - Senior Abhinaya Guru">
             </div>
-            <div style="padding: 20px;">
-              <span class="workshop-badge-status" style="margin-bottom: 6px;">SENIOR ABHINAYA GURU</span>
-              <h3 style="margin-block: 6px 4px; font-size: 1.3rem;">Vidushi Meenakshi Iyer</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
-                Celebrated for her profound portrayal of Navarasas and delicate Jayadeva Ashtapadis. Guides senior disciples through nuanced character portrayals and Sanskrit lyrical interpretation.
-              </p>
-              <div style="font-size: 0.8rem; color: var(--terracotta-bloom); font-weight: 600;">Specialty: Padams, Javalis, Sanchari Bhava & Sanskrit Poetics</div>
-            </div>
+            <span class="guru-portrait-role">SENIOR ABHINAYA GURU</span>
+            <h3 class="guru-portrait-name">Vidushi Meenakshi Iyer</h3>
+            <p class="guru-portrait-bio">
+              Celebrated for her profound portrayal of Navarasas and delicate Jayadeva Ashtapadis. Guides senior disciples through nuanced character portrayals and Sanskrit lyrical interpretation.
+            </p>
+            <div class="guru-portrait-specialty">Specialty: Padams, Javalis, Sanchari Bhava & Sanskrit Poetics</div>
           </div>
 
           <!-- Guru 4: Nritta Specialist -->
-          <div class="hover-petal-card" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden;">
-            <div class="image-leaf-container" style="height: 260px;">
+          <div class="hover-petal-card guru-portrait-card">
+            <div class="guru-portrait-avatar">
               <img src="assets/images/guru-dancer.jpg" alt="Vidushi Priyadarshini Rao - Choreography & Nritta Specialist">
             </div>
-            <div style="padding: 20px;">
-              <span class="workshop-badge-status" style="margin-bottom: 6px;">NRITTA & JATHI SPECIALIST</span>
-              <h3 style="margin-block: 6px 4px; font-size: 1.3rem;">Vidushi Priyadarshini Rao</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
-                Leading soloist who conducts the Prarambhik and Madhyama foundation tracks. Specializes in geometric body alignment, high-speed footwork clarity, and dancer conditioning.
-              </p>
-              <div style="font-size: 0.8rem; color: var(--terracotta-bloom); font-weight: 600;">Specialty: 64 Adavu Series, Aramandi Stamina & Tillanas</div>
-            </div>
+            <span class="guru-portrait-role">NRITTA & JATHI SPECIALIST</span>
+            <h3 class="guru-portrait-name">Vidushi Priyadarshini Rao</h3>
+            <p class="guru-portrait-bio">
+              Leading soloist who conducts the Prarambhik and Madhyama foundation tracks. Specializes in geometric body alignment, high-speed footwork clarity, and dancer conditioning.
+            </p>
+            <div class="guru-portrait-specialty">Specialty: 64 Adavu Series, Aramandi Stamina & Tillanas</div>
           </div>
 
         </div>

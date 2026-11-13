@@ -38,7 +38,7 @@
 
       <div class="nav-actions">
         <a href="dashboard.html" class="ctrl-btn" aria-label="Student Dashboard" title="Student Dashboard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </a>
         <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
           <span>◐</span>
@@ -75,16 +75,16 @@
       <li><a href="contact.html" class="mobile-drawer-link">Contact</a></li>
     </ul>
     <div class="drawer-controls">
-      <a href="login.html" class="nav-primary-cta" style="width: 100%; text-align: center;">
-        <span>Student Portal</span>
-      </a>
       <div class="ctrl-group">
         <a href="dashboard.html" class="ctrl-btn" aria-label="Student Dashboard" title="Student Dashboard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </a>
         <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme"><span>◐</span></button>
         <button class="ctrl-btn js-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction"><span>⇄</span></button>
       </div>
+      <a href="login.html" class="nav-primary-cta" style="width: 100%; text-align: center;">
+        <span>Student Portal</span>
+      </a>
     </div>
   </div>
 
@@ -183,23 +183,51 @@
           <p>We believe Bharatanatyam is a transformative spiritual sadhana. Every foot strike, eye movement, and mudra is an offering of pure devotion.</p>
         </div>
 
-        <div class="grid-3" style="margin-top: var(--space-2xl);">
-          <div class="hover-petal-card" style="background: var(--bg-surface); padding: var(--space-xl); border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
-            <div style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--terracotta-bloom); margin-bottom: 8px;">01</div>
-            <h4 style="margin-bottom: 12px;">GEOMETRIC PURITY</h4>
-            <p style="font-size: 0.95rem;">Uncompromising adherence to the pristine lines of Aramandi, Natyarambha, and horizontal arm extensions that echo temple sculptures.</p>
+        <div class="manifesto-split">
+          <div class="manifesto-visual-frame">
+            <img src="assets/images/manifesto-natya.jpg" alt="Bharatanatyam dancer in Natyarambha posture inside a stone temple mandapam">
+            <div class="manifesto-visual-caption">
+              <blockquote>&ldquo;Yato Hasta Tato Drishti, Yato Drishti Tato Manah.&rdquo;</blockquote>
+              <cite>Natya Shastra &bull; Sacred Lineage</cite>
+            </div>
           </div>
 
-          <div class="hover-petal-card" style="background: var(--bg-surface); padding: var(--space-xl); border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
-            <div style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--terracotta-bloom); margin-bottom: 8px;">02</div>
-            <h4 style="margin-bottom: 12px;">TALA INVARIANCE</h4>
-            <p style="font-size: 0.95rem;">Developing mathematical precision across intricate rhythm cycles of Adi, Rupaka, and Misra Chapu guided by the Nattuvanar's cymbals.</p>
-          </div>
+          <div>
+            <div class="manifesto-pillar-list">
+              <div class="manifesto-pillar-row">
+                <div class="manifesto-pillar-node">01</div>
+                <div class="manifesto-pillar-content">
+                  <span class="manifesto-pillar-kicker">ANGA SHUDDHI</span>
+                  <h4 class="manifesto-pillar-title">GEOMETRIC PURITY</h4>
+                  <p class="manifesto-pillar-desc">Uncompromising adherence to the pristine lines of Aramandi, Natyarambha, and horizontal arm extensions that echo temple sculptures.</p>
+                  <div class="manifesto-pillar-tags">Aramandi &bull; Natyarambha &bull; 64 Adavus</div>
+                </div>
+              </div>
 
-          <div class="hover-petal-card" style="background: var(--bg-surface); padding: var(--space-xl); border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
-            <div style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--terracotta-bloom); margin-bottom: 8px;">03</div>
-            <h4 style="margin-bottom: 12px;">SPIRITUAL BHAVA</h4>
-            <p style="font-size: 0.95rem;">Transcending physical technique through emotional depth, awakening the Navarasas to depict ancient Sanskrit and Tamil epics.</p>
+              <div class="manifesto-pillar-row">
+                <div class="manifesto-pillar-node">02</div>
+                <div class="manifesto-pillar-content">
+                  <span class="manifesto-pillar-kicker">LAYA &amp; TALA</span>
+                  <h4 class="manifesto-pillar-title">TALA INVARIANCE</h4>
+                  <p class="manifesto-pillar-desc">Developing mathematical precision across intricate rhythm cycles of Adi, Rupaka, and Misra Chapu guided by the Nattuvanar's cymbals.</p>
+                  <div class="manifesto-pillar-tags">Adi &bull; Rupaka &bull; Misra Chapu</div>
+                </div>
+              </div>
+
+              <div class="manifesto-pillar-row">
+                <div class="manifesto-pillar-node">03</div>
+                <div class="manifesto-pillar-content">
+                  <span class="manifesto-pillar-kicker">RASA &amp; ABHINAYA</span>
+                  <h4 class="manifesto-pillar-title">SPIRITUAL BHAVA</h4>
+                  <p class="manifesto-pillar-desc">Transcending physical technique through emotional depth, awakening the Navarasas to depict ancient Sanskrit and Tamil epics.</p>
+                  <div class="manifesto-pillar-tags">Navarasas &bull; Padams &bull; Ashtapadis</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-lg); padding-left: 90px;">
+              <a href="about.html" class="btn btn-primary">MEET OUR GURUS &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -350,6 +378,10 @@
                   <p style="font-size: 0.95rem;">Head ornaments symbolizing the Sun and Moon (Surya-Chandra), waist belt (Oddiyanam), and jhumkas.</p>
                 </div>
               </div>
+            </div>
+
+            <div style="margin-top: var(--space-lg);">
+              <a href="upcoming-workshops.html" class="btn btn-primary">EXPLORE TRAINING PROGRAMS &rarr;</a>
             </div>
           </div>
 
