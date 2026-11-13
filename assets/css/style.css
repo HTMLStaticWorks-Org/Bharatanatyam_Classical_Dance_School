@@ -2285,23 +2285,27 @@ img {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 12px;
   margin-block: var(--space-sm);
+  padding: 0;
 }
 
 .event-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  position: relative;
+  display: block;
+  padding-inline-start: 24px;
   font-size: 1rem;
-  text-align: left;
+  line-height: 1.55;
+  text-align: start;
 }
 
 .event-list li::before {
   content: '✦';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
   color: var(--terracotta-bloom);
-  flex-shrink: 0;
-  margin-top: 2px;
+  line-height: 1.55;
 }
 
 .event-image {
@@ -2325,15 +2329,14 @@ img {
     margin-inline: auto !important;
   }
   .event-list {
-    align-items: flex-start;
-    text-align: left;
-    width: fit-content;
+    align-items: stretch;
+    text-align: start;
+    width: 100%;
     max-width: 100%;
     margin-inline: auto;
   }
   .event-list li {
-    align-items: flex-start;
-    text-align: left;
+    text-align: start;
   }
 }
 
