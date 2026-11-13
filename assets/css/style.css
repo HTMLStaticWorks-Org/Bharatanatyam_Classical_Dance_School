@@ -3473,6 +3473,12 @@ img {
   }
 }
 
+@media (max-width: 768px) {
+  .footer .social-links-grid {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 480px) {
   .footer-grid {
     grid-template-columns: 1fr;
