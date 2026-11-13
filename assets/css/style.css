@@ -2019,6 +2019,21 @@ img {
   align-items: center;
 }
 
+.adornment-icon-box {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  box-shadow: var(--shadow-xs, 0 2px 6px rgba(0, 0, 0, 0.04));
+}
+
 .vertical-steps {
   display: flex;
   flex-direction: column;
