@@ -5653,3 +5653,53 @@ img {
   }
 }
 
+/* ==========================================================================
+   PERFORMANCE PAGE: COSTUME & TRADITION SHOWCASE (1024px, 768px & MOBILE)
+   ========================================================================== */
+.attire-showcase-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.attire-cards-grid {
+  width: 100%;
+  margin-top: var(--space-sm);
+  text-align: start;
+}
+
+@media (max-width: 1024px) {
+  .attire-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+
+  .attire-showcase-grid .hero-image-wrapper {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .attire-showcase-grid .hero-content {
+    align-items: center;
+    padding-inline: 12px;
+  }
+
+  .attire-showcase-grid .hero-supporting {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .attire-showcase-grid .hero-content {
+    padding-inline: 8px;
+  }
+
+  .attire-cards-grid {
+    text-align: start;
+  }
+}
+
