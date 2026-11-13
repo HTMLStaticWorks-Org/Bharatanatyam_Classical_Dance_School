@@ -2495,20 +2495,30 @@ img {
 
 .workshop-card-footer {
   margin-top: auto;
-  padding-top: var(--space-sm);
+  padding-top: 14px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   border-top: 1px solid var(--border-color);
-  gap: 12px;
+  gap: 14px;
 }
 
 .workshop-card-footer > div:first-child {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 4px 10px;
 }
 
 .workshop-card-footer .btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   white-space: nowrap !important;
   word-break: normal !important;
   flex-shrink: 0 !important;
