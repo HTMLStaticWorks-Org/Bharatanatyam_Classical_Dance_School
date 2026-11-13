@@ -2823,6 +2823,27 @@ img {
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .workbench-stage {
+    padding: 50px 14px 18px;
+    min-height: auto;
+  }
+
+  .workbench-stage img {
+    width: 100%;
+    height: 240px;
+    max-height: none;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+  }
+
+  .workbench-selector-btn {
+    white-space: nowrap;
+    font-size: 0.78rem;
+    padding: 8px 12px;
+  }
+}
+
 /* ==========================================================================
    PRICING COMPARISON TABLE
    ========================================================================== */
@@ -5243,8 +5264,10 @@ img {
   .btn:not(table .btn):not(.workshop-card .btn):not(.workshop-card-footer .btn):not(.batch-enroll-card .btn), .nav-primary-cta {
     max-width: 100% !important;
     box-sizing: border-box !important;
-    white-space: normal !important;
-    word-break: break-word !important;
+    white-space: nowrap !important;
+    word-break: normal !important;
+    font-size: 0.78rem !important;
+    padding: 11px 18px !important;
   }
 }
 
