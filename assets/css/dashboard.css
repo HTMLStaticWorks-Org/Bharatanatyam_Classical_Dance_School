@@ -6,6 +6,10 @@
 @import url('./style.css');
 
 /* Portal Layout Structure */
+html, body, .dashboard-body {
+  overflow-x: clip !important;
+}
+
 .dashboard-body {
   background-color: var(--bg-primary);
   color: var(--text-main);
@@ -147,21 +151,12 @@
   width: calc(100% - 280px);
 }
 
-[dir="rtl"] .dashboard-sidebar {
-  inset-inline-start: auto;
-  inset-inline-end: 0;
-}
-
-[dir="rtl"] .dashboard-main {
-  margin-inline-start: 0;
-  margin-inline-end: 280px;
-}
-
 /* Topbar Header */
 .dashboard-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 900;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 900 !important;
   background-color: var(--bg-surface);
   border-bottom: 1px solid var(--border-color);
   padding: 14px 28px;
@@ -1229,10 +1224,9 @@ table .col-inv-action .btn {
     align-items: center !important;
   }
 
-  /* Hide secondary RTL & Theme toggles on mobile header for clean layout */
   .topbar-actions .js-rtl-toggle,
   .topbar-actions .js-theme-toggle {
-    display: none !important;
+    display: inline-flex !important;
   }
 
   .notif-wrapper {
@@ -1829,8 +1823,17 @@ table .col-inv-action .btn {
     gap: 4px !important;
   }
 
-  .topbar-actions .js-theme-toggle {
-    display: none !important;
+  .topbar-actions .js-theme-toggle,
+  .topbar-actions .js-rtl-toggle {
+    display: inline-flex !important;
+  }
+
+  .topbar-actions .ctrl-btn,
+  .topbar-actions .notif-btn {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    font-size: 0.78rem !important;
   }
 
   .guest-avatar-img {
